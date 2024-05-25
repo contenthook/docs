@@ -1,0 +1,70 @@
+.container {
+  @apply max-w-7xl mx-auto font-bold px-4 sm:px-6 lg:px-8 max-h-screen min-h-screen flex flex-col items-center justify-center transition-all duration-300 ease-in-out;
+  overflow-x: hidden;
+}
+
+.backgroundColors {
+  @apply absolute z-[-1] top-0 left-0 h-full w-full bg-gradient-to-br from-white/10 via-transparent to-blue-400/20 blur-[50px];
+  overflow-x: hidden;
+}
+
+.titleDark {
+  @apply text-6xl font-bold text-center max-w-4xl text-transparent bg-gradient-to-br from-white via-blue-400 to-white bg-clip-text;
+}
+
+.titleLight {
+  @apply text-6xl font-bold text-center max-w-4xl text-transparent bg-gradient-to-br from-black via-blue-800 to-black bg-clip-text;
+}
+
+.descriptionDark {
+  @apply text-xl text-center max-w-4xl mt-4 text-gray-200 font-semibold;
+}
+
+.descriptionLight {
+  @apply text-xl text-center max-w-4xl mt-4 text-gray-600 font-semibold;
+}
+
+.buttonContainer {
+  @apply flex flex-row items-center justify-center mt-8 gap-4;
+}
+
+.getStartedButtonDark {
+  @apply bg-white hover:shadow-xl hover:shadow-white/15 text-black font-bold py-3 px-6 rounded transition-all duration-300 ease-in-out;
+}
+
+.getStartedButtonLight {
+  @apply bg-black hover:shadow-xl hover:shadow-black/15 text-white font-bold py-3 px-6 rounded transition-all duration-300 ease-in-out;
+}
+
+.examplesButtonDark {
+  @apply bg-transparent border border-white/60 hover:border-white text-white/60 hover:text-white font-bold py-3 px-6 rounded transition-all duration-300 ease-in-out;
+}
+
+.examplesButtonLight {
+  @apply bg-transparent border border-black/60 hover:border-black text-black/60 hover:text-black font-bold py-3 px-6 rounded transition-all duration-300 ease-in-out;
+}
+
+.logoContainerDark {
+  @apply flex flex-row items-center justify-center mt-8 rounded-xl p-4 border-2 border-white/60 mb-14;
+  box-shadow: -100px 0 100px rgba(255, 255, 255, 0.450), 100px 0 100px rgba(105, 105, 255, 0.726);
+}
+
+.logoContainerLight {
+  @apply flex flex-row items-center justify-center mt-8 shadow-xl rounded-xl p-4 border-2 border-black/60 mb-14;
+}
+
+.logoTextDark {
+  @apply text-2xl text-white font-bold select-none;
+}
+
+.logoTextLight {
+  @apply text-2xl text-black font-bold select-none;
+}
+
+.logoDark {
+  @apply h-16 w-16;
+}
+
+.logoLight {
+  @apply h-16 w-16 invert;
+}

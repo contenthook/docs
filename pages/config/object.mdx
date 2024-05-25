@@ -1,0 +1,108 @@
+# Object
+
+The `Object` is how we call it, the entire possible configuration object for the contenthook configuration file. Below you can see all 4 possible files with all their available options.
+
+## contenthook.config.js - `require/module.exports`
+
+```javascript copy
+module.exports = {
+  projectName: "project-name", // Required
+  contentPath: "./content",    // Required
+  assetsPath: "./assets",      // Required
+  apiKey: {                    // Required (also available as below)
+    env: "true",
+    variable: "API_KEY"
+  },
+  // for the apiKey, or:
+  apiKey: "API_KEY",           // Required (also available as above)
+  scripts: {                   // Optional (but needed when using `contenthook run <command>`)
+    start: "node index.js",
+    dev: "npx nodemon index.js"
+  },
+  apiVersion: "v1"             // Required
+}
+```
+
+## contenthook.config.cjs - `require/module.exports`
+
+```javascript copy
+module.exports = {
+  projectName: "project-name", // Required
+  contentPath: "./content",    // Required
+  assetsPath: "./assets",      // Required
+  apiKey: {                    // Required (also available as below)
+    env: "true",
+    variable: "API_KEY"
+  },
+  // for the apiKey, or:
+  apiKey: "API_KEY",           // Required (also available as above)
+  scripts: {                   // Optional (but needed when using `contenthook run <command>`)
+    start: "node index.js",
+    dev: "npx nodemon index.js"
+  },
+  apiVersion: "v1"             // Required
+}
+```
+
+## contenthook.config.mjs - `import/export`
+
+```javascript copy
+export default {
+  projectName: "project-name", // Required
+  contentPath: "./content",    // Required
+  assetsPath: "./assets",      // Required
+  apiKey: {                    // Required (also available as below)
+    env: "true",
+    variable: "API_KEY"
+  },
+  // for the apiKey, or:
+  apiKey: "API_KEY",           // Required (also available as above)
+  scripts: {                   // Optional (but needed when using `contenthook run <command>`)
+    start: "node index.js",
+    dev: "npx nodemon index.js"
+  },
+  apiVersion: "v1"             // Required
+}
+```
+
+## contenthook.config.ts - `import/export`
+
+```typescript copy
+export default {
+  projectName: "project-name", // Required
+  contentPath: "./content",    // Required
+  assetsPath: "./assets",      // Required
+  apiKey: {                    // Required (also available as below)
+    env: "true",
+    variable: "API_KEY"
+  },
+  // for the apiKey, or:
+  apiKey: "API_KEY",           // Required (also available as above)
+  scripts: {                   // Optional (but needed when using `contenthook run <command>`)
+    start: "node index.js",
+    dev: "npx nodemon index.js"
+  },
+  apiVersion: "v1"             // Required
+}
+```
+
+## Options
+
+- `projectName` - The name of the project.
+- `contentPath` - The path to the content folder.
+- `assetsPath` - The path to the assets folder.
+- `apiKey` - The API key for the project.
+  - `env` - If the API key is stored in an environment variable.
+  - `variable` - The name of the environment variable.
+- `scripts` - The scripts to run the project.
+- `apiVersion` - The API version for the project.
+
+## Required and Optional
+| Option | Required |
+| --- | --- |
+| `projectName` | `✅` |
+| `contentPath` | `✅` |
+| `assetsPath` | `✅` |
+| `apiKey` | `✅` |
+| `scripts` | `❌` |
+| `apiVersion` | `✅` |

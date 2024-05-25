@@ -1,0 +1,30 @@
+# Scripts
+
+Here we will be going to add some more example scripts to the contenthook cli for you to learn how to use.
+
+## Example Scripts
+- start
+- build
+- test
+
+How do we use these scripts with the contenthook cli now?
+Simply add these scripts to the `scripts` object in the `contenthook.config.js` file.
+
+```js {2-6} copy
+module.exports = {
+  scripts: {
+    start: 'next dev',
+    build: 'next build',
+    test: 'jest'
+  }
+}
+```
+
+Important! Make sure you have the required dependencies installed in your project to run these scripts.
+
+## Usage
+```bash copy
+$ contenthook run start
+$ contenthook run build
+$ contenthook run test
+```

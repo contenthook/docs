@@ -1,0 +1,111 @@
+# Usage
+
+- For commands, you can see the [CLI Commands](/cli/commands) page.
+- For flags, you can see the [CLI Flags](/cli/flags) page.
+- For configuration objects, you can see the [CLI Configuration Objects](/config/object) page.
+
+In this page, you will find more information about using ContentHook.
+
+----
+
+## Using ContentHook in the Backend
+In this section we will provide you with some information about using ContentHook in the Backend and a example code.
+
+### Installation
+- for installation, please go to the [Installation](/installation)
+
+### Configuration
+- for configuration, please go to the [Configuration](/configuration)
+
+### Example Code
+```js copy
+import { getContents } from "contenthook";
+// or
+const { getContents } = require("contenthook");
+
+const example = async () => {
+    const contents = await getContents();
+    console.log(contents);
+};
+
+example();
+```
+
+----
+
+## Using ContentHook in the Frontend
+In this section we will provide you with some information about using ContentHook in the Frontend and a example code.
+
+### Installation
+- for installation, please go to the [Installation](/installation)
+
+### Configuration
+- for configuration, please go to the [Configuration](/configuration)
+
+### Choosing a Framework, Library or Tool
+- ContentHook is basically compatible with all frameworks, libraries and tools as it is a CLI tool and you only Import the content files via an NPM package. You can use it with `React`, `Vue`, `Angular`, `Svelte`, `etc.`
+
+I have choosen `React` for this example. Below are 2 examples, the first one is a new page function showing all available contents in form as blog posts, the second one is a single page function showing a single content of a blog post.
+
+### Example Code
+```jsx copy
+import React, { useEffect, useState } from "react";
+import { getContents } from "contenthook";
+
+const Blog = () => {
+    const [contents, setContents] = useState([]);
+
+    useEffect(() => {
+        const fetchContents = async () => {
+            const contents = await getContents();
+            setContents(contents);
+        };
+
+        fetchContents();
+    }, []);
+
+    return (
+        <div>
+            {contents.map((content, index) => (
+                <div key={index}>
+                    <h1>{content.title}</h1>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default Blog;
+```
+
+```jsx copy
+import React, { useEffect, useState } from "react";
+import { getContent } from "contenthook";
+
+const BlogPost = () => {
+    const [content, setContent] = useState({});
+
+    useEffect(() => {
+        const fetchContent = async () => {
+            const content = await getContent();
+            setContent(content[0]); // As we only use one content in this example.
+            // You can also use special ID's or slugs to get a specific content.
+        };
+
+        fetchContent();
+    }, []);
+
+    return (
+        <div>
+            <h1>{content.title}</h1>
+            <p>{content.markdown}</p>
+        </div>
+    );
+};
+
+export default BlogPost;
+```
+
+----
+
+And that's all for this page. If you have any questions, feel free to ask in the [Discord](https://contenthook.dev/redirects/discord) server.

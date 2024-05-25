@@ -1,0 +1,13 @@
+{
+  "index": "Getting Started",
+  "installation": "Installation",
+  "configuration": "Configuration",
+  "usage": "Usage",
+  "config": "Configuration",
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/shuding_",
+    "newWindow": true
+  }
+}
