@@ -4,10 +4,16 @@
   "configuration": "Configuration",
   "usage": "Usage",
   "config": "Configuration",
-  "contact": {
-    "title": "Contact ↗",
+  "dashboard": {
+    "title": "Dashboard",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://contenthook.dev/dashboard",
+    "newWindow": true
+  },
+  "main": {
+    "title": "Main Site",
+    "type": "page",
+    "href": "https://contenthook.dev",
     "newWindow": true
   }
 }

@@ -44,7 +44,7 @@ const theme: DocsThemeConfig = {
     link: 'https://github.com/contenthook/docs',
   },
   chat: {
-    link: 'https://discord.gg/contenthook',
+    link: 'https://contenthook.dev/redirects/discord',
   },
   docsRepositoryBase: 'https://github.com/contenthook/docs',
   editLink: {
