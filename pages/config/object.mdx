@@ -5,7 +5,15 @@ The `Object` is how we call it, the entire possible configuration object for the
 ## contenthook.config.js - `require/module.exports`
 
 ```javascript copy
+const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+
 module.exports = {
+  ContentMetaData,
   projectName: "project-name", // Required
   contentPath: "./content",    // Required
   assetsPath: "./assets",      // Required
@@ -26,7 +34,15 @@ module.exports = {
 ## contenthook.config.cjs - `require/module.exports`
 
 ```javascript copy
+const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+
 module.exports = {
+  ContentMetaData,
   projectName: "project-name", // Required
   contentPath: "./content",    // Required
   assetsPath: "./assets",      // Required
@@ -47,6 +63,13 @@ module.exports = {
 ## contenthook.config.mjs - `import/export`
 
 ```javascript copy
+export const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+
 export default {
   projectName: "project-name", // Required
   contentPath: "./content",    // Required
@@ -68,6 +91,13 @@ export default {
 ## contenthook.config.ts - `import/export`
 
 ```typescript copy
+export const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+
 export default {
   projectName: "project-name", // Required
   contentPath: "./content",    // Required
@@ -85,6 +115,10 @@ export default {
   apiVersion: "v1"             // Required
 }
 ```
+
+## APIs
+
+- [ContentMetaData](/config/ContentMetaData) (Required)
 
 ## Options
 

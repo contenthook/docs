@@ -1,0 +1,103 @@
+# ContentMetaData API
+
+The ContentMetaData API is a configuration object inside the contenthook configuration file, which allows you to define the metadata for the content.
+
+## Example Usage
+
+```javascript
+export const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+```
+
+## Full Config Example
+
+```javascript
+export const ContentMetaData = {
+  title: String,
+  description: String,
+  date: Date,
+  tags: [String],
+};
+
+export default {
+  projectName: "contenthook",
+  contentPath: "./content",
+  assetsPath: "./assets",
+  apiKey: {
+    env: "true",
+    variable: "API_KEY"
+  },
+  scripts: {
+    start: "node index.js",
+    dev: "npx nodemon index.js"
+  },
+  apiVersion: "v1"
+};
+```
+
+## In this exampled used Properties
+
+| Property     | Type     | Description |
+|--------------|----------|-------------|
+| title        | String   | The title of the content. |
+| description  | String   | The description of the content. |
+| date         | Date     | The date of the content. |
+| tags         | [String] | The tags of the content. |
+
+## Available Types (Tested)
+| Type     | Description |
+|----------|-------------|
+| String   | A string value. |
+| Date     | A date value. |
+| [String] | An array of string values. |
+
+## Usage in Code
+
+### Backend Example
+```javascript
+import { getContents } from "contenthook";
+// or
+const { getContents } = require("contenthook");
+
+const example = async () => {
+    const contents = await getContents();
+    console.log(contents.map(content => content.metadata)); // Returns the metadata of each content.
+};
+
+example();
+```
+
+### Frontend Example
+```jsx
+import React, { useEffect, useState } from "react";
+import { getContents } from "contenthook";
+
+const Blog = () => {
+    const [contents, setContents] = useState([]);
+
+    useEffect(() => {
+        const fetchContents = async () => {
+            const contents = await getContents();
+            setContents(contents);
+        };
+
+        fetchContents();
+    }, []);
+
+    return (
+        <div>
+            {contents.map((content, index) => (
+                <div key={index}>
+                    <h1>{content.metadata.title}</h1> {/* Access the metadata object and its title property. */}
+                    <p>{content.metadata.description}</p> {/* Access the metadata object and its description property. */}
+                    <p>{content.metadata.date}</p> {/* Access the metadata object and its date property. */}
+                    <p>{content.metadata.tags.join(", ")}</p> {/* Access the metadata object and its tags property. */}
+                </div>
+            ))}
+        </div>
+    );
+};
