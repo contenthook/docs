@@ -15,7 +15,89 @@ const useDark = () => {
 const theme: DocsThemeConfig = {
   useNextSeoProps() {
     return {
-      titleTemplate: '%s – Contenthook Resources'
+      titleTemplate: '%s – Contenthook Docs',
+      openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://docs.contenthook.dev',
+        siteName: 'Contenthook Docs',
+        images: [
+          {
+            url: "https://www.contenthook.dev/img/banner.png",
+            width: 1920,
+            height: 1860,
+            alt: "Contenthook",
+            type: "image/png",
+            secureUrl: "https://www.contenthook.dev/img/banner.png",
+          },
+        ],
+      },
+      noindex: false,
+      nofollow: false,
+      twitter: {
+        handle: "@contenthook",
+        site: "Contenthook - Advanced, flexible, fast, easy and secure CMS",
+        cardType: "summary_large_image",
+      },
+      additionalMetaTags: [
+        {
+          name: "apple-mobile-web-app-title",
+          content: "Contenthook Docs",
+        },
+        {
+          name: "apple-mobile-web-app-capable",
+          content: "yes",
+        },
+        {
+          name: "apple-mobile-web-app-status-bar-style",
+          content: "black",
+        },
+        {
+          name: "apple-touch-icon",
+          content: "https://www.contenthook.dev/img/apple-touch-icon.png",
+        },
+        {
+          name: "msapplication-TileImage",
+          content: "https://www.contenthook.dev/img/mstile-150x150.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "https://www.contenthook.dev/img/favicon-32x32.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "https://www.contenthook.dev/img/favicon-16x16.png",
+        },
+        {
+          rel: "manifest",
+          href: "/site.webmanifest",
+        },
+        {
+          rel: "mask-icon",
+          href: "https://www.contenthook.dev/img/safari-pinned-tab.svg",
+          color: "#000000",
+        },
+        {
+          property: "dc:creator",
+          content: "Contenthook",
+        },
+        {
+          name: "application-name",
+          content: "Contenthook Docs",
+        },
+        {
+          name: "msapplication-TileColor",
+          content: "#000000",
+        },
+        {
+          name: "theme-color",
+          content: "#000000",
+        },
+      ] as any,
     }
   },
   primaryHue: 196,
