@@ -21,7 +21,9 @@ In this section we will provide you with some information about using ContentHoo
 ```js copy
 import { useNode } from "contenthook";
 // or
-const { useNode } = require("contenthook");
+// const { useNode } = require("contenthook");
+// or
+// import { getContents } from "@contenthook/node";
 
 const example = async () => {
     const contents = await useNode().getContents();
