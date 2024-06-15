@@ -49,22 +49,17 @@ In this section we will provide you with some information about using ContentHoo
 
 I have choosen `React` for this example. Below are 2 examples, the first one is a new page function showing all available contents in form as blog posts, the second one is a single page function showing a single content of a blog post.
 
-> WARNING: [!IMPORTANT]
-> For frontend the ``@contenthook/browser`` package is used. This package is still in development, we are testing beta versions. This package is not yet ready for production use.
-
 ### Example Code
 ```jsx copy
 import React, { useEffect, useState } from "react";
-import { useBrowser } from "contenthook";
-// or
-// import { getContents } from "@contenthook/browser";
+import { getContents } from "@contenthook/browser";
 
 const Blog = () => {
     const [contents, setContents] = useState([]);
 
     useEffect(() => {
         const fetchContents = async () => {
-            const contents = await useBrowser().getContents({ configFileUrl: "https://example.com/contenthook.config.js" });
+            const contents = await getContents({ api_key: "YOUR_API_KEY" });
             setContents(contents);
         };
 
@@ -88,16 +83,14 @@ export default Blog;
 
 ```jsx copy
 import React, { useEffect, useState } from "react";
-import { useBrowser } from "contenthook";
-// or
-// import { getContents } from "@contenthook/browser";
+import { getContents } from "@contenthook/browser";
 
 const BlogPost = () => {
     const [content, setContent] = useState({});
 
     useEffect(() => {
         const fetchContent = async () => {
-            const content = await useBrowser().getContents();
+            const content = await getContents({ api_key: "YOUR_API_KEY" });
             setContent(content[0]); // As we only use one content in this example.
             // You can also use special ID's or slugs to get a specific content.
         };
