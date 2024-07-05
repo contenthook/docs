@@ -4,6 +4,7 @@
   "configuration": "Configuration",
   "usage": "Usage",
   "config": "Configuration",
+  "api-section": "API",
   "dashboard": {
     "title": "Dashboard",
     "type": "page",

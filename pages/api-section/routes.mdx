@@ -1,0 +1,87 @@
+# API Routes
+
+This page lists all the routes available in the public API. Each route is a separate endpoint that can be accessed using a specific method (GET, POST, PUT, DELETE).
+
+## Routes
+- ``/contents/all`` - [Click here](#contentsall)
+- ``/contents/single`` - [Click here](#contentssingle)
+- ``/configs/all`` - [Click here](#configsall)
+- ``/configs/single`` - [Click here](#configssingle)
+
+## Contents
+- ``/contents/all`` - Returns all the contents registered on a specific API Key.
+- ``/contents/single`` - Returns a single content based on the provided File Name and API Key.
+
+## Configs
+- ``/configs/all`` - Returns all the configurations registered on a specific API Key.
+- ``/configs/single`` - Returns a single configuration based on the provided Variable and API Key.
+
+----
+
+### contents/all
+- **Method**: GET
+- **Description**: Returns all the contents registered on a specific API Key.
+- **Parameters**
+    - **key**: The API Key to be used to retrieve the contents.
+- **Response**
+    - **200**: Success
+    - **400**: Bad Request
+    - **401**: Unauthorized
+    - **404**: Not Found
+    - **500**: Internal Server Error
+
+### contents/single
+- **Method**: GET
+- **Description**: Returns a single content based on the provided File Name and API Key.
+- **Parameters**
+    - **key**: The API Key to be used to retrieve the content.
+    - **fileName**: The File Name of the content to be retrieved.
+- **Response**
+    - **200**: Success
+    - **400**: Bad Request
+    - **401**: Unauthorized
+    - **404**: Not Found
+    - **500**: Internal Server Error
+
+### configs/all
+- **Method**: GET
+- **Description**: Returns all the configurations registered on a specific API Key.
+- **Parameters**
+    - **key**: The API Key to be used to retrieve the configurations.
+- **Response**
+    - **200**: Success
+    - **400**: Bad Request
+    - **401**: Unauthorized
+    - **404**: Not Found
+    - **500**: Internal Server Error
+
+### configs/single
+- **Method**: GET
+- **Description**: Returns a single configuration based on the provided Variable and API Key.
+- **Parameters**
+    - **key**: The API Key to be used to retrieve the configuration.
+    - **variable**: The Variable of the configuration to be retrieved.
+- **Response**
+    - **200**: Success
+    - **400**: Bad Request
+    - **401**: Unauthorized
+    - **404**: Not Found
+    - **500**: Internal Server Error
+
+----
+
+## Errors
+- **400**: Bad Request
+- **401**: Unauthorized
+- **404**: Not Found
+- **500**: Internal Server Error
+
+## Rate Limiting
+- **Limit**: 100 requests per minute
+- **Exceeded**: 429 Too Many Requests
+
+## Authentication
+- **API Key**: Required for all requests
+- **Authorization**: Required for some requests (currently not public)
+    - **Type**: Bearer Token
+    - **Value**: API Key

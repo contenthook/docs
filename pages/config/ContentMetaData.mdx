@@ -59,12 +59,14 @@ export default {
 
 ### Backend Example
 ```javascript
-import { getContents } from "contenthook";
+import { useNode } from "contenthook";
 // or
-const { getContents } = require("contenthook");
+const { getContents } = require("@contenthook/node");
 
 const example = async () => {
-    const contents = await getContents();
+    const contents = await useNode.getContents();
+    // or
+    // const contents = await getContents();
     console.log(contents.map(content => content.metadata)); // Returns the metadata of each content.
 };
 
@@ -74,14 +76,14 @@ example();
 ### Frontend Example
 ```jsx
 import React, { useEffect, useState } from "react";
-import { getContents } from "contenthook";
+import { getContents } from "@contenthook/browser";
 
 const Blog = () => {
     const [contents, setContents] = useState([]);
 
     useEffect(() => {
         const fetchContents = async () => {
-            const contents = await getContents();
+            const contents = await getContents({ api_key: "YOUR_API_KEY" });
             setContents(contents);
         };
 
